@@ -1,0 +1,14 @@
+.produto {
+    margin-bottom: 30px;
+  }
+
+  body {
+    background: linear-gradient(to bottom, #F38684, #ffffff);
+    /* Gradiente de verde claro para branco */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  h2{
+    color:rgb(65, 59, 126);
+  }
