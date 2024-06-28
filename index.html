@@ -9,17 +9,30 @@
     <link rel="stylesheet" href="./src/css/index.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg" style="background-color:#F38684;">
-        <div class="container d-flex justify-content-center align-items-center">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="img/Logo.png" alt="Logo da Empresa" style="max-height: 250px;">
+                <img src="img/Logo.png" alt="MRG Corretora de Seguros" style="width: 120px; height: auto;">
             </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__pulse" href="https://mrgon.netlify.app/">
+                            <i class="fas fa-globe"></i> MRG Online
+                        </a>
+                    </li>
+            </div>
+
         </div>
-        
     </nav>
     
     
-    <h100>,</h100>
 
 <!-- Carrossel de Novidades -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -81,33 +94,35 @@
                 <i class="fas fa-tshirt fa-5x mt-3 mb-3"></i>
                 <div class="card-body">
                     <h5 class="card-title">Camisas</h5>
-                    <a href="./src/pages/camisa.html" class="btn btn-primary">Ver produtos</a>
+                    <a href="./src/pages/camisa.html" class="btn btn-primary">Ver produtos <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card text-center">
-                <i class="fas fa-tshirt fa-5x mt-3 mb-3"></i>
-                <div class="card-body">
+                <img src="./img/blusa.png" class="img-fluid mt-1 mb-1" alt="Imagem de blusas" style="max-width: 104px; margin: auto;">
+                <div class="card-body justify-content-center">
                     <h5 class="card-title">Blusas</h5>
-                    <a href="./src/pages/blusas.html" class="btn btn-primary">Ver produtos</a>
+                    <a href="./src/pages/blusas.html" class="btn btn-primary">Ver produtos <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>
+        
         <div class="col-md-4">
             <div class="card text-center">
                 <i class="fas fa-shoe-prints fa-5x mt-3 mb-3"></i>
                 <div class="card-body">
                     <h5 class="card-title">Calçados</h5>
-                    <a href="./src/pages/calçados.html" class="btn btn-primary">Ver produtos</a>
+                    <a href="./src/pages/calçados.html" class="btn btn-primary">Ver produtos <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+
 <footer class="text-center mt-5 py-4 bg-light">
-    <p>&copy; 2024 Porto Seguro. Todos os direitos reservados. Feito com <a href="./ADM/login.html" style="color: inherit; text-decoration: none;">❤️</a></p>
+    <p>&copy; 2024 Porto Seguro. Todos os direitos reservados.<a href="./ADM/login.html" style="color: inherit; text-decoration: none;">❤️</a></p>
 </footer>
 
 
