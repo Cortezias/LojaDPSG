@@ -1,14 +1,23 @@
+/* Estilos para o produto */
 .produto {
-    margin-bottom: 30px;
-  }
+  margin-bottom: 30px;
+}
 
-  body {
-    background: linear-gradient(to bottom, #F38684, #ffffff);
-    /* Gradiente de verde claro para branco */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-  h2{
-    color:rgb(65, 59, 126);
-  }
+/* Estilos para o corpo da página */
+body {
+  background: linear-gradient(to bottom, #aaf2c9, #ffffff); /* Gradiente de verde claro para branco */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif; /* Adiciona uma fonte mais legível para o corpo do texto */
+  color: #333; /* Define uma cor de texto padrão */
+  margin: 0; /* Remove margens padrão do corpo */
+  padding: 0; /* Remove padding padrão do corpo */
+}
+
+/* Estilos para os cabeçalhos */
+h2 {
+  color: rgb(65, 59, 126);
+  font-size: 1.5em; /* Ajusta o tamanho da fonte para melhor legibilidade */
+  margin: 20px 0; /* Adiciona margem superior e inferior para separar do conteúdo adjacente */
+}
