@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -7,6 +6,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="../src/css/loginADM.css">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <div class="container">
@@ -15,23 +16,26 @@
         <h3>Portal Administrativo</h3>
       </div>
       <div class="card-body">
-        <form action="login.php" method="POST">
+        <form id="loginForm">
           <div class="form-group">
+            <label for="username">Usuário</label>
             <input type="text" id="username" name="username" class="form-control" placeholder="Usuário" required>
           </div>
           <div class="form-group">
+            <label for="password">Senha</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="Senha" required>
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-primary">Entrar</button>
           </div>
+          <div id="errorMsg" class="text-danger"></div>
         </form>
       </div>
     </div>
   </div>
-
   <!-- Bootstrap JS e jQuery (opcional, se necessário) -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="../src/js/login.js"></script>
 </body>
 </html>

@@ -1,9 +1,8 @@
 .produto {
     margin-bottom: 30px;
   }
-
   body {
-    background: linear-gradient(to bottom, #F38684, #ffffff);
+    background: linear-gradient(to bottom, #aaf2c9, #ffffff);
     /* Gradiente de verde claro para branco */
     background-size: cover;
     background-repeat: no-repeat;

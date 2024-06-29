@@ -17,9 +17,45 @@
 }
 
 body {
-    background: linear-gradient(to bottom, #F38684, #ffffff);
+    background: linear-gradient(to bottom, #aaf2c9, #ffffff);
     /* Gradiente de verde claro para branco */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
+.btn-primary {
+    background-color: #9dadbe; /* Cor de fundo do botão ao passar o mouse */
+}
+.card {
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Aumenta o tamanho do cartão em 5% */
+}
+
+.destaque {
+    background-color: #c5b4c4; /* Cor de fundo mais chamativa */
+    padding: 40px 20px; /* Aumentar o padding para dar mais espaço */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adicionar sombra */
+    animation: fadeInUp 1s ease-out forwards; /* Animação de fade-in */
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Levemente deslocada para baixo */
+}
+
+.destaque .section-title {
+    color: #333333; /* Cor do texto mais escura para contraste */
+    font-size: 2.5rem; /* Aumentar o tamanho do texto */
+}
+
+.destaque .fas.fa-shopping-bag {
+    color: #dd6151; /* Cor do ícone */
+    font-size: 2rem; /* Aumentar o tamanho do ícone */
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* Tornar visível */
+        transform: translateY(0); /* Mover para a posição original */
+    }
+}
