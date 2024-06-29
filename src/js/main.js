@@ -15,7 +15,9 @@ $(document).ready(function() {
                 <h5 class="card-title">${product.name}</h5>
                 <p class="card-text">${product.description}</p>
                 <h6>R$ ${product.price.toFixed(2)}</h6>
-                <button class="btn btn-primary saiba-mais-btn" data-toggle="modal" data-target="#modal${product.objectId}">Saiba Mais</button>
+                <button class="btn btn-primary saiba-mais-btn" data-toggle="modal" data-target="#modal${product.objectId}">
+                  <i class="fas fa-info-circle"></i> Saiba Mais
+                </button>
               </div>
             </div>
           </div>
@@ -36,7 +38,9 @@ $(document).ready(function() {
                   <p><strong>Tamanho:</strong> ${product.size}</p>
                   <p><strong>Uso:</strong> ${product.usage}</p>
                   <p><strong>Preço:</strong> R$ ${product.price.toFixed(2)}</p>
-                  <button class="btn btn-success btn-block"><i class="fab fa-whatsapp"></i> Reservar no WhatsApp</button>
+                  <a href="https://wa.me/35991513407" class="btn btn-success btn-block">
+                    <i class="fab fa-whatsapp"></i> Reservar no WhatsApp
+                  </a>
                 </div>
               </div>
             </div>

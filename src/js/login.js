@@ -1,14 +1,43 @@
-// Aguarda o carregamento completo do DOM
-document.addEventListener('DOMContentLoaded', function() {
-  // Seleciona o formulário pelo ID
-  var form = document.getElementById('loginForm');
+// Credenciais pré-cadastradas
+const predefinedUsers = [
+  { username: "1", password: "2" },
+  { username: "user2", password: "password2" },
+  { username: "admin", password: "admin123" }
+];
 
-  // Adiciona um ouvinte para o evento de submissão do formulário
-  form.addEventListener('submit', function(event) {
-    // Previne o comportamento padrão de envio do formulário (que recarregaria a página)
-    event.preventDefault();
+// Armazenar as credenciais no localStorage
+function storeCredentials() {
+  localStorage.setItem('users', JSON.stringify(predefinedUsers));
+}
 
-    // Redireciona o usuário para a URL desejada
-    window.location.href = 'portalADM.html'; // Substitua 'URL_DA_SUA_PAGINA' pela URL para a qual deseja redirecionar
+// Recuperar as credenciais do localStorage
+function getStoredCredentials() {
+  return JSON.parse(localStorage.getItem('users'));
+}
+
+// Função para verificar as credenciais de login
+function validateLogin(username, password) {
+  const users = getStoredCredentials();
+  return users.some(user => user.username === username && user.password === password);
+}
+
+// Armazenar as credenciais ao carregar a página (somente uma vez)
+if (!localStorage.getItem('users')) {
+  storeCredentials();
+}
+
+$(document).ready(function() {
+  $('#loginForm').on('submit', function(event) {
+      event.preventDefault();
+      
+      const username = $('#username').val();
+      const password = $('#password').val();
+      
+      if (validateLogin(username, password)) {
+          // Redirecionar para outra página após login bem-sucedido
+          window.location.href = 'portalADM.html'; // Substitua 'dashboard.html' pela página desejada
+      } else {
+          $('#message').html('<div class="alert alert-danger">Invalid username or password.</div>');
+      }
   });
 });

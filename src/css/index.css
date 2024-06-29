@@ -23,16 +23,6 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
-.btn-primary {
-    background-color: #9dadbe; /* Cor de fundo do botão ao passar o mouse */
-}
-.card {
-    transition: transform 0.3s ease; /* Adiciona uma transição suave */
-}
-
-.card:hover {
-    transform: scale(1.05); /* Aumenta o tamanho do cartão em 5% */
-}
 
 .destaque {
     background-color: #c5b4c4; /* Cor de fundo mais chamativa */
@@ -58,4 +48,34 @@ body {
         opacity: 1; /* Tornar visível */
         transform: translateY(0); /* Mover para a posição original */
     }
+}
+
+.section-products {
+    background-color: #f0f0f0; /* Cor de fundo para destacar a seção */
+    padding: 60px 0; /* Espaçamento interno superior e inferior */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.section-products .section-title {
+    color: #333; /* Cor do texto do título */
+    font-size: 2.5rem; /* Tamanho do texto do título */
+    margin-bottom: 30px; /* Espaçamento inferior para separar do conteúdo */
+}
+
+.section-products .fas.fa-shopping-bag {
+    color: #dd6151; /* Cor do ícone */
+    font-size: 2rem; /* Tamanho do ícone */
+}
+footer {
+    background-color: #f8f9fa; /* Cor de fundo do footer */
+    color: #666; /* Cor do texto do footer */
+    padding: 20px 0; /* Espaçamento interno superior e inferior */
+}
+
+footer a.secure-link {
+    color: #333; /* Cor do link */
+    text-decoration: none; /* Remove sublinhado padrão */
+    margin-left: 5px; /* Espaçamento à esquerda do emoji */
+    font-size: 1.2rem; /* Tamanho do texto do link */
 }
