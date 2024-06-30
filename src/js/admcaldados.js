@@ -8,7 +8,7 @@ $(document).ready(function() {
     Backendless.Data.of('Products').find()
       .then(function(products) {
         $('#productList').empty();
-        products.forEach(product => {
+        products.filter(product => product.category === 'Blusa').forEach(product => {
           $('#productList').append(`
             <li class="list-group-item d-flex justify-content-between align-items-center">
               ${product.name}
@@ -25,41 +25,6 @@ $(document).ready(function() {
       });
   }
 
-  function compressImage(file, callback) {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = event => {
-      const img = new Image();
-      img.src = event.target.result;
-      img.onload = () => {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        const maxWidth = 800;
-        const maxHeight = 800;
-        let width = img.width;
-        let height = img.height;
-
-        if (width > height) {
-          if (width > maxWidth) {
-            height *= maxWidth / width;
-            width = maxWidth;
-          }
-        } else {
-          if (height > maxHeight) {
-            width *= maxHeight / height;
-            height = maxHeight;
-          }
-        }
-
-        canvas.width = width;
-        canvas.height = height;
-        ctx.drawImage(img, 0, 0, width, height);
-        const dataUrl = canvas.toDataURL('image/jpeg', 0.7); // Qualidade 70%
-        callback(dataUrl);
-      };
-    };
-  }
-
   loadProducts();
 
   $('#productForm').submit(function(event) {
@@ -69,25 +34,14 @@ $(document).ready(function() {
       name: $('#productName').val(),
       description: $('#productDescription').val(),
       price: parseFloat($('#productPrice').val()),
+      image: $('#productImage').val(),
       size: $('#productSize').val(),
-      usage: $('#productUsage').val()
+      usage: $('#productUsage').val(),
+      category: 'Blusa'  // Adicionar categoria fixa
     };
 
     const productId = $('#productId').val();
-    const fileInput = $('#productImage')[0];
 
-    if (fileInput.files && fileInput.files[0]) {
-      const file = fileInput.files[0];
-      compressImage(file, function(compressedImage) {
-        product.image = compressedImage;
-        saveProduct(product, productId);
-      });
-    } else {
-      saveProduct(product, productId);
-    }
-  });
-
-  function saveProduct(product, productId) {
     if (productId) {
       Backendless.Data.of('Products').save({ ...product, objectId: productId })
         .then(function() {
@@ -108,7 +62,7 @@ $(document).ready(function() {
           console.error('Error creating product:', error);
         });
     }
-  }
+  });
 
   $('#productList').on('click', '.edit-btn', function() {
     const productId = $(this).data('id');
@@ -118,7 +72,7 @@ $(document).ready(function() {
         $('#productName').val(product.name);
         $('#productDescription').val(product.description);
         $('#productPrice').val(product.price);
-        $('#productImage').val('');
+        $('#productImage').val(product.image);
         $('#productSize').val(product.size);
         $('#productUsage').val(product.usage);
       })
