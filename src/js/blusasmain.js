@@ -38,7 +38,7 @@ $(document).ready(function() {
                   <p><strong>Tamanho:</strong> ${product.size}</p>
                   <p><strong>Uso:</strong> ${product.usage}</p>
                   <p><strong>Preço:</strong> R$ ${product.price.toFixed(2)}</p>
-                  <a href="https://api.whatsapp.com/send?phone=35991513407&text=Olá! Gostaria de reservar" class="btn btn-success btn-block">
+                  <a href="https://api.whatsapp.com/send?phone=3591513407&text=Olá! Gostaria de reservar" class="btn btn-success btn-block">
                     <i class="fab fa-whatsapp"></i> Reservar no WhatsApp
                   </a>
                 </div>
