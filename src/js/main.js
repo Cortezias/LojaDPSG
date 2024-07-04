@@ -23,12 +23,14 @@ $(document).ready(function() {
           </div>
         `);
 
+        const whatsappMessage = `Olá! Gostaria de reservar o produto ${product.name} que custa R$ ${product.price.toFixed(2)}.`;
+
         $('#productModals').append(`
           <div class="modal fade" id="modal${product.objectId}" tabindex="-1" role="dialog" aria-labelledby="modal${product.objectId}Label" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="modal${product.objectId}Label">${product.nsame}</h5>
+                  <h5 class="modal-title" id="modal${product.objectId}Label">${product.name}</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -38,7 +40,7 @@ $(document).ready(function() {
                   <p><strong>Tamanho:</strong> ${product.size}</p>
                   <p><strong>Uso:</strong> ${product.usage}</p>
                   <p><strong>Preço:</strong> R$ ${product.price.toFixed(2)}</p>
-                  <a href="https://api.whatsapp.com/send?phone=3591513407&text=Olá! Gostaria de reservar" class="btn btn-success btn-block">
+                  <a id="whatsappLink${product.objectId}" href="https://api.whatsapp.com/send?phone=3591513407&text=${encodeURIComponent(whatsappMessage)}" target="_blank" class="btn btn-success btn-block">
                     <i class="fab fa-whatsapp"></i> Reservar no WhatsApp
                   </a>
                 </div>
